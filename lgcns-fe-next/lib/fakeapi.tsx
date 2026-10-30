@@ -1,4 +1,8 @@
-// lib/fakeApi.ts
+export type Comment = {
+  id: number;
+  text: string;
+};
+
 const wait = (ms: number) =>
   new Promise<void>((resolve) => setTimeout(resolve, ms));
 
@@ -15,7 +19,7 @@ export async function getAuthor(id: string) {
 export async function getComments(id: string) {
   await wait(3000); // 3초 (일부러 제일 느리게)
   return [
-    { id: 1, text: "잘 봤어요" },
+    { id: 1, text: `${id}잘 봤어요` },
     { id: 2, text: "Suspense 신기하네요" },
   ];
 }
